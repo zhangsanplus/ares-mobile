@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-*
+
+*.sh
+
+.history
+.vscode
+.husky
+.github

@@ -1,0 +1,25 @@
+ls:
+  .dir: kebab-case
+  src:
+    .dir: kebab-case | regex:^__nav__$
+    .html: kebab-case | regex:^__nav__$
+    .js: kebab-case
+    .ts: kebab-case
+    .d.ts: kebab-case
+    .css: kebab-case
+    .scss: kebab-case
+    .less: kebab-case
+    .vue: kebab-case | regex:^App$
+    .jsx: kebab-case
+    .tsx: kebab-case
+
+ignore:
+  - .git
+  - .husky
+  - .vscode
+  - .history
+  - .npm
+  - node_modules
+  - pre
+  - dist
+  - public

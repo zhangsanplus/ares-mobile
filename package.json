@@ -1,0 +1,98 @@
+{
+  "name": "ares-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A ready-to-use h5 mpa template based on Vue3 and Vant4, offering fast and efficient development experience",
+  "author": "zhangsanplus",
+  "license": "MIT",
+  "homepage": "https://github.com/zhangsanplus/ares-mobile",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangsanplus/ares-mobile.git"
+  },
+  "keywords": [
+    "vue3",
+    "typescript",
+    "vant",
+    "mpa",
+    "template"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "dev": "npm run sync && vite --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:test": "vue-tsc --noEmit && vite build --mode test",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "lint:css": "stylelint **/*.{css,scss,vue} --fix",
+    "lint:js": "eslint . --fix",
+    "lint:ls": "ls-lint",
+    "lint": "npm run lint:css && npm run lint:js && npm run lint:ls",
+    "typecheck": "vue-tsc --noEmit",
+    "new": "node ./scripts/generate.js",
+    "sync": "node ./scripts/sync.js"
+  },
+  "dependencies": {
+    "@unocss/preset-rem-to-px": "^0.53.6",
+    "@vueuse/core": "10.2.1",
+    "axios": "1.4.0",
+    "dayjs": "^1.11.6",
+    "mitt": "^3.0.0",
+    "normalize.css": "^8.0.1",
+    "vant": "4.6.3",
+    "vue": "3.3.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "0.39.8",
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@iconify-json/carbon": "^1.1.18",
+    "@ls-lint/ls-lint": "2.0.1",
+    "@types/node": "20.4.4",
+    "@vitejs/plugin-legacy": "4.1.1",
+    "@vitejs/plugin-vue": "4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "eslint": "^8.13.0",
+    "fs-extra": "11.1.1",
+    "glob": "^10.3.3",
+    "husky": "^8.0.3",
+    "kolorist": "^1.6.0",
+    "lint-staged": "13.2.3",
+    "postcss": "8.4.27",
+    "postcss-html": "^1.4.1",
+    "postcss-px-to-viewport-8-plugin": "^1.1.5",
+    "postcss-scss": "^4.0.6",
+    "sass": "1.64.1",
+    "stylelint": "^15.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "34.0.0",
+    "terser": "5.19.2",
+    "typescript": "5.1.6",
+    "unocss": "^0.53.6",
+    "unplugin-auto-import": "0.16.6",
+    "unplugin-icons": "^0.16.3",
+    "unplugin-vue-components": "0.25.1",
+    "vite": "4.4.6",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-progress": "0.0.7",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue-tsc": "1.6.5"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,vue}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{css,vue,scss}": [
+      "stylelint --fix"
+    ],
+    "src/**": [
+      "ls-lint"
+    ]
+  }
+}
