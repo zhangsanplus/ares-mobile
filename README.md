@@ -1,7 +1,7 @@
 
 <div align="center">
 
-<img src="https://github.com/zhangsanplus/ares-admin/blob/main/screenshot/logo.png?raw=true" height="260" />
+<img src="https://github.com/zhangsanplus/ares-admin/blob/main/screenshot/logo.png?raw=true" height="200" />
 
 <h1>Ares Mobile</h1>
 
@@ -12,7 +12,9 @@
 
 ## 🔥 介绍
 
-**Ares Admin** 是一个基于 Vant4 和 Vite 搭建的 H5 **多页面** 前端模板，以古希腊神话中战神 Ares 命名。它旨在帮助开发者快速搭建各种 H5 项目，简化开发流程，提高开发效率。
+**Ares Mobile** 是一个基于 Vant4 和 Vite 搭建的 H5 **多页面** 前端模板，以古希腊神话中战神 Ares 命名。它旨在帮助开发者快速搭建各种 H5 项目，简化开发流程，提高开发效率。
+
+另外，如果你需要搭建中后台管理系统，可使用 [Ares Admin](https://zhangsanplus.github.io)
 
 ## 🌈 安装和使用
 
@@ -49,12 +51,6 @@ npm run new
 # 输入页面名称(页面名 + 空格 + 中文标题)
 # 例如：home 首页
 # 或直接在项目 `src/pages` 目录下新建 html
-```
-
-- 同步页面
-
-```sh
-npm run async
 ```
 
 ## ✨ 特性
