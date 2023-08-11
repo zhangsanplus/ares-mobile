@@ -1,16 +1,31 @@
 <template>
-  <div class="container">
-    <div px-4>
-      <p class="text-orange-500 text-[15px]">
-        纯静态页面建议直接放 <strong>public</strong> 目录下
+  <div class="container bg-slate-100 text-xs overflow-hidden">
+    <section class="bg-white p-4 m-4 rounded-1 ">
+      <h1 text-center text-xl color-primary>
+        Ares Mobile
+      </h1>
+      <p text-center text-gray>
+        基于 Vant4 和 Vue3 的 H5 多页面前端模板
       </p>
+    </section>
 
-      <p mb-4>
-        <span class="color-primary text-lg">unocss</span>
-        <span class="text-stone-400 pl-2">The instant on-demand Atomic CSS engine.</span>
-      </p>
+    <section class="bg-white p-4 m-4 rounded-1 ">
+      <h3 mt-2 mb-4>
+        ✨ 特性
+      </h3>
+      <p>1. 原子化 CSS <strong>UnoCSS</strong></p>
+      <p>2. 移动端组件库 <strong>Vant</strong></p>
+      <p>3. 默认配置<strong>自动导入</strong>、<strong>字体图标</strong>等常用插件</p>
+      <p>4. 移动端调试插件 <strong>vconsole</strong></p>
+      <p>5. 移动端适配插件 <strong>postcss-px-to-viewport</strong></p>
+      <p>6. 前端规范配置 <strong>eslint</strong>、<strong>stylelint</strong>、<strong>commitlint</strong></p>
+    </section>
 
-      <div class="flex gap-2 mb-5">
+    <section class="bg-white p-4 m-4 rounded-1">
+      <h3 mt-2 mb-4>
+        🔥 组件封装
+      </h3>
+      <div flex gap-2>
         <button
           class="btn"
           @click="visible = true"
@@ -31,15 +46,16 @@
           target="_self"
         >
           <span i-carbon-home mr-1 />
-          首页
+          返回首页
         </a>
       </div>
-    </div>
+    </section>
 
-    <div class="px-4 bg-slate-100">
-      <h3 py-4 m-0>
-        无限加载列表
+    <section class="bg-white p-4 m-4 rounded-1">
+      <h3 mt-2 mb-4>
+        🌈 无限加载列表
       </h3>
+
       <van-list
         v-model:loading="loading"
         :finished="finished"
@@ -48,7 +64,7 @@
       >
         <van-cell v-for="item in list" :key="item.id" :title="item.title" />
       </van-list>
-    </div>
+    </section>
 
     <x-modal
       :visible="visible"
