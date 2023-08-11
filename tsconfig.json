@@ -1,20 +1,35 @@
 {
+  // https://cn.vitejs.dev/guide/features.html#typescript
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
+    "importHelpers": true,
+    "experimentalDecorators": true,
     "sourceMap": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "types": [
+      "node",
+      "vite/client"
+    ],
     "baseUrl": ".",
-    "lib": ["es2020", "dom"],
-    "typeRoots": ["./node_modules/@types/", "./types/"],
     "paths": {
       "@/*": ["src/*"]
-    },
-    "skipLibCheck": true
+    }
   },
-  "exclude": ["dist", "test", "node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

@@ -1,11 +1,13 @@
 {
   "recommendations": [
-    "vue.volar",
-    "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint",
+    "antfu.iconify",
+    "antfu.goto-alias",
     "antfu.unocss",
     "bradlc.vscode-tailwindcss",
-    "usernamehw.errorlens",
+    "csstools.postcss",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
     "streetsidesoftware.code-spell-checker",
+    "vue.volar",
   ]
 }
