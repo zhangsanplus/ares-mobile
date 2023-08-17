@@ -6,9 +6,5 @@
   {
     "path": "index",
     "title": "首页"
-  },
-  {
-    "path": "luck-draw",
-    "title": "幸运抽奖"
   }
 ]

@@ -51,19 +51,15 @@
       </div>
     </section>
 
-    <section class="bg-white p-4 m-4 rounded-1">
-      <h3 mt-2 mb-4>
-        🌈 无限加载列表
-      </h3>
-
-      <van-list
-        v-model:loading="loading"
-        :finished="finished"
-        finished-text="没有更多了"
-        @load="onLoad"
-      >
-        <van-cell v-for="item in list" :key="item.id" :title="item.title" />
-      </van-list>
+    <section class="bg-white p-2 m-4 rounded-1">
+      <van-tabs v-model:active="active">
+        <van-tab title="无限加载">
+          <scroll-list />
+        </van-tab>
+        <van-tab title="幸运抽奖">
+          <luck-draw />
+        </van-tab>
+      </van-tabs>
     </section>
 
     <x-modal
@@ -77,44 +73,18 @@
 </template>
 
 <script setup lang="ts">
-import { getArticleList } from '@/api/article'
 import Modal from '@/components/x-modal'
+import LuckDraw from './components/luck-draw.vue'
+import ScrollList from './components/scroll-list.vue'
 
 const visible = ref(false)
+const active = ref(0)
 
 function onClick() {
   Modal.open({
     content: '感谢您的反馈，如果建议被成功采纳，我们会第一时间通知您',
   })
 }
-
-const list = ref<ArticleType.ListItem[]>([])
-const loading = ref(false)
-const finished = ref(false)
-const form = reactive({
-  title: '',
-  pageNum: 1,
-  pageSize: 20,
-})
-
-function onLoad() {
-  ++form.pageNum
-  getList()
-}
-
-async function getList() {
-  loading.value = true
-  try {
-    const { data } = await getArticleList(form)
-    list.value = form.pageNum === 1 ? data.list : [...list.value, ...data.list]
-    finished.value = list.value.length >= data.count
-  } catch (error) {
-    console.error(error)
-  }
-  loading.value = false
-}
-
-getList()
 </script>
 
 <style lang="scss">

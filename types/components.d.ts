@@ -10,6 +10,8 @@ declare module 'vue' {
     VanButton: typeof import('vant/es')['Button']
     VanCell: typeof import('vant/es')['Cell']
     VanList: typeof import('vant/es')['List']
+    VanTab: typeof import('vant/es')['Tab']
+    VanTabs: typeof import('vant/es')['Tabs']
     XModal: typeof import('./../src/components/x-modal/x-modal.vue')['default']
   }
 }

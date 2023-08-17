@@ -1,13 +1,11 @@
 <template>
   <div class="luckdraw-content">
     <!-- 滚动号码 -->
-    <div class="luckdraw-scroll">
-      <ul class="bg-scroll">
-        <li v-for="(item, i) in list" :key="i" :class="{ anim: animate && i === 0 }">
-          <span class="lkq-name">{{ item.phone }}</span>
-        </li>
-      </ul>
-    </div>
+    <ul class="luckdraw-scroll">
+      <li v-for="(item, i) in list" :key="i" :class="{ anim: animate && i === 0 }">
+        <span class="lkq-name">{{ item.phone }}</span>
+      </li>
+    </ul>
 
     <!-- 抽奖弹窗 -->
     <div class="turntable">
@@ -217,7 +215,6 @@ function handleStart() {
   }
 
   speed = initSpeed
-  // 开始抽奖
   isRuningLucky = true
   time = Date.now()
   drawAward()
@@ -231,19 +228,17 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .luckdraw-scroll {
-  .bg-scroll {
-    position: relative;
-    height: 40px;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    font-size: 20px;
-    line-height: 40px;
-    text-align: center;
-    list-style: none;
-    background: #bcbcc1;
-    border-radius: 20px;
-  }
+  position: relative;
+  height: 40px;
+  margin: 30px auto;
+  padding: 0;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  list-style: none;
+  background: #bcbcc1;
+  border-radius: 20px;
 
   .lkq-name {
     margin: 0 auto;
@@ -257,14 +252,13 @@ onMounted(() => {
 }
 
 .luckdraw-content {
-  padding: 40px 20px 100px;
 
   // 转盘
   .turntable {
     position: relative;
     width: 320px;
     height: 320px;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 20px;
     background: #fed479;
     border-radius: 20px;
