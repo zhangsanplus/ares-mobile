@@ -3,7 +3,7 @@
     <img src="@/assets/logo.png">
     <h2>Ares Mobile</h2>
     <p>基于 Vant4 和 Vue3 的 H5 多页面前端模板</p>
-    <div>
+    <div class="nav">
       <van-button type="primary" url="https://github.com/zhangsanplus/ares-mobile">
         github
       </van-button>
@@ -11,6 +11,10 @@
         页面导航
       </van-button>
     </div>
+
+    <p style="color: #aaa;">
+      PC端建议打开 <strong style="color: #a0a0a0;">F12</strong> 在移动端模式下访问
+    </p>
   </div>
 </template>
 
@@ -27,8 +31,8 @@ console.log('drop console test')
     width: 80px;
   }
 
-  p {
-    margin-bottom: 60px;
+  .nav {
+    margin: 30px auto;
   }
 
   .van-button + .van-button {

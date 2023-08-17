@@ -19,6 +19,7 @@ ignore:
   - .vscode
   - .history
   - .npm
+  - .github
   - node_modules
   - pre
   - dist
