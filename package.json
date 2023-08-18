@@ -2,7 +2,7 @@
   "name": "ares-mobile",
   "version": "1.0.2",
   "private": true,
-  "packageManager": "pnpm@7.14.1",
+  "packageManager": "pnpm@8.6.12",
   "description": "A ready-to-use h5 mpa template based on Vue3 and Vant4, offering fast and efficient development experience",
   "author": "zhangsanplus",
   "license": "MIT",
