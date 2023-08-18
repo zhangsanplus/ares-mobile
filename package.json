@@ -33,6 +33,7 @@
     "lint": "npm run lint:css && npm run lint:js && npm run lint:ls",
     "typecheck": "vue-tsc --noEmit",
     "up": "taze major -I",
+    "release": "bumpp",
     "new": "node ./scripts/generate.js",
     "sync": "node ./scripts/sync.js"
   },
@@ -56,6 +57,7 @@
     "@vitejs/plugin-legacy": "4.1.1",
     "@vitejs/plugin-vue": "4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "bumpp": "^9.1.1",
     "eslint": "^8.46.0",
     "fs-extra": "11.1.1",
     "glob": "^10.3.3",
