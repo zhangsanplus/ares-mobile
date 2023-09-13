@@ -7,14 +7,17 @@
 
 [![License](https://img.shields.io/npm/l/package.json.svg?style=flat)](https://github.com/zhangsanplus/ares-mobile/blob/main/LICENSE)
 
-基于 Vant4 和 Vue3 的 H5 多页面前端模板
+基于 Vant4 和 Vue3 的 H5 前端**多页面**模板
 </div>
 
 ## 🔥 介绍
 
-**Ares Mobile** 是一个基于 Vant4 和 Vite 搭建的 H5 **多页面** 前端模板，以古希腊神话中战神 Ares 命名。它旨在帮助开发者快速搭建各种 H5 项目，简化开发流程，提高开发效率。
+**Ares Mobile** 是一个基于 Vant4 和 Vite 搭建的 H5 前端模板，以古希腊神话中战神 Ares 命名。它旨在帮助开发者快速搭建各种 H5 项目，简化开发流程，提高开发效率。
 
-如果你需要搭建中后台管理系统，推荐你使用 [Ares Admin](https://zhangsanplus.github.io)
+- [单页面（SPA）模板](https://github.com/zhangsanplus/ares-mobile)
+- [多页面（MPA）模板](https://github.com/zhangsanplus/ares-mobile/tree/mpa)
+
+如果你需要搭建中后台管理系统，推荐你使用 [Ares Admin](https://github.com/zhangsanplus/ares-admin)
 
 ## 🌈 安装和使用
 
@@ -63,9 +66,10 @@ npm run up
 
 - [x] 移动端组件库：`vant`
 - [x] 原子化CSS：`unocss`
+- [x] 应用程序级JS的语言：`TypeScript`
 - [x] 移动端适配：`postcss-px-to-viewport`
 - [x] 开发环境区分：`development + test + production`
-- [x] 移动端调试配置：`vconsole`
+- [x] 移动端调试工具：`eruda`
 - [x] 旧版浏览器兼容：`plugin-legacy`
 - [x] 代码格式化：`eslint`
 - [x] CSS格式化：`stylelint`

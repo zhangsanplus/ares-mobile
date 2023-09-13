@@ -4,7 +4,7 @@
     <h2>Ares Mobile</h2>
     <p>基于 Vant4 和 Vue3 的 H5 多页面前端模板</p>
     <div class="nav">
-      <van-button type="primary" url="https://github.com/zhangsanplus/ares-mobile">
+      <van-button type="primary" url="https://github.com/zhangsanplus/ares-mobile/tree/mpa">
         github
       </van-button>
       <van-button type="primary" url="./__nav__.html">

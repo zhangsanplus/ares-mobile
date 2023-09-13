@@ -13,7 +13,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import { createHtmlPlugin } from 'vite-plugin-html'
+import eruda from 'vite-plugin-eruda'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 import type { PluginOption } from 'vite'
@@ -23,7 +23,7 @@ export function pathResolve(dir: string) {
 }
 
 export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
-  const { VITE_APP_ENV, VITE_DEV_TOOLS_SCRIPT } = viteEnv
+  const { VITE_APP_ENV, VITE_DEV_TOOLS } = viteEnv
   const isProd = VITE_APP_ENV === 'production'
 
   const vitePlugins: PluginOption[] = [
@@ -32,17 +32,7 @@ export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
     UnoCSS(),
     AutoImport({
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-      imports: [
-        'vue',
-        'vue/macros',
-        '@vueuse/core',
-      ],
-      resolvers: [
-        // 自动导入 vant 相关函数，如：ElMessage, ElMessageBox...
-        VantResolver({
-          importStyle: false,
-        }),
-      ],
+      imports: ['vue', 'vue/macros', '@vueuse/core'],
       dts: pathResolve('types/auto-imports.d.ts'),
     }),
     Components({
@@ -63,21 +53,15 @@ export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹
       iconDirs: [path.resolve(process.cwd(), 'src/icons')],
-      // 指定symbolId格式
       symbolId: 'icon-[dir]-[name]',
       svgoOptions: isBuild,
     }),
-    createHtmlPlugin({
-      inject: {
-        data: {
-          injectScript: VITE_DEV_TOOLS_SCRIPT,
-        },
-      },
-      minify: isProd,
-    }),
-    // setup name
     vueSetupExtend(),
   ]
+
+  if (VITE_DEV_TOOLS === 'true') {
+    vitePlugins.push(eruda())
+  }
 
   if (isBuild && isProd) {
     // 旧版浏览器支持

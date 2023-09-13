@@ -2,11 +2,11 @@ interface ImportMetaEnv {
   /** 环境变量 */
   VITE_APP_ENV: 'production' | 'development' | 'test'
 
-  /** 端口号 */
+  /** 开发服务端口号 */
   VITE_DEV_PORT: number
 
-  /** 移动端开发者工具 */
-  VITE_DEV_TOOLS_SCRIPT: string
+  /** 调试工具 */
+  VITE_DEV_TOOLS: 'true' | 'false'
 
   /** 打包生成的文件目录 */
   VITE_BUILD_OUTPUT_DIR: string

@@ -37,7 +37,6 @@ function renderHtmlFile(pagePath, pageName) {
   <meta name="keywords" content="ares-admin,ares-mobile,ares admin,ares mobile,ares,mpa,vue,h5,template">
   <meta name="format-detection" content="telephone=no" />
   <title>${pageName}</title>
-  <%- VITE_DEV_TOOLS_SCRIPT %>
 </head>
 
 <body>

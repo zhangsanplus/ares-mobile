@@ -3,10 +3,10 @@
   "version": "1.0.2",
   "private": true,
   "packageManager": "pnpm@8.6.12",
-  "description": "A ready-to-use h5 mpa template based on Vue3 and Vant4, offering fast and efficient development experience",
+  "description": "An H5 (spa and mpa) template based on Vue3 and Vant4.",
   "author": "zhangsanplus",
   "license": "MIT",
-  "homepage": "https://github.com/zhangsanplus/ares-mobile",
+  "homepage": "https://github.com/zhangsanplus/ares-mobile/tree/mpa",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhangsanplus/ares-mobile.git"
@@ -16,6 +16,7 @@
     "typescript",
     "vant",
     "mpa",
+    "spa",
     "template"
   ],
   "engines": {
@@ -38,12 +39,10 @@
     "sync": "node ./scripts/sync.js"
   },
   "dependencies": {
-    "@unocss/preset-rem-to-px": "^0.55.0",
     "@vueuse/core": "10.3.0",
     "axios": "1.4.0",
     "dayjs": "^1.11.9",
     "mitt": "^3.0.1",
-    "normalize.css": "^8.0.1",
     "vant": "4.6.4",
     "vue": "3.3.4"
   },
@@ -54,6 +53,7 @@
     "@iconify-json/carbon": "^1.1.19",
     "@ls-lint/ls-lint": "2.0.1",
     "@types/node": "20.4.9",
+    "@unocss/preset-rem-to-px": "^0.55.0",
     "@vitejs/plugin-legacy": "4.1.1",
     "@vitejs/plugin-vue": "4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
@@ -82,7 +82,7 @@
     "unplugin-vue-components": "0.25.1",
     "vite": "4.4.9",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-eruda": "^1.0.1",
     "vite-plugin-progress": "0.0.7",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
