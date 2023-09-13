@@ -5,7 +5,7 @@
         Ares Mobile
       </h1>
       <p text-center text-gray>
-        基于 Vant4 和 Vue3 的 H5 多页面前端模板
+        基于 Vant4 和 Vue3 的 H5 移动端模板
       </p>
     </section>
 
@@ -13,12 +13,14 @@
       <h3 mt-2 mb-4>
         ✨ 特性
       </h3>
-      <p>1. 原子化 CSS <strong>UnoCSS</strong></p>
-      <p>2. 移动端组件库 <strong>Vant</strong></p>
-      <p>3. 默认配置<strong>自动导入</strong>、<strong>字体图标</strong>等常用插件</p>
-      <p>4. 移动端调试插件 <strong>vconsole</strong></p>
-      <p>5. 移动端适配插件 <strong>postcss-px-to-viewport</strong></p>
-      <p>6. 前端规范配置 <strong>eslint</strong>、<strong>stylelint</strong>、<strong>commitlint</strong></p>
+      <p>1. <a href="https://github.com/zhangsanplus/ares-mobile" class="underline">单页面SPA</a>和<a href="https://github.com/zhangsanplus/ares-mobile/tree/mpa" class="underline">多页面MPA</a>模板适用于不同的需求</p>
+      <p>2. 移动端组件库 - <strong>Vant</strong></p>
+      <p>3. 原子化 CSS - <strong>UnoCSS</strong></p>
+      <p>4. 应用程序级 JavaScript 的语言 - <strong>TypeScript</strong></p>
+      <p>5. 默认配置<strong>自动导入</strong>、<strong>字体图标</strong>等常用插件</p>
+      <p>6. 移动端调试插件 - <strong>eruda</strong></p>
+      <p>7. 移动端适配插件 - <strong>postcss-px-to-viewport</strong></p>
+      <p>8. 前端规范配置 - <strong>eslint</strong>、<strong>stylelint</strong>、<strong>commitlint</strong></p>
     </section>
 
     <section class="bg-white p-4 m-4 rounded-1">
@@ -30,7 +32,7 @@
           class="btn"
           @click="visible = true"
         >
-          全局组件
+          自定义组件
         </button>
 
         <button
@@ -39,15 +41,6 @@
         >
           函数调用
         </button>
-
-        <a
-          class="btn"
-          href="./index.html"
-          target="_self"
-        >
-          <span i-carbon-home mr-1 />
-          返回首页
-        </a>
       </div>
     </section>
 
@@ -74,6 +67,7 @@
 
 <script setup lang="ts">
 import Modal from '@/components/x-modal'
+import XModal from '@/components/x-modal/x-modal.vue'
 import LuckDraw from './components/luck-draw.vue'
 import ScrollList from './components/scroll-list.vue'
 
@@ -82,13 +76,8 @@ const active = ref(0)
 
 function onClick() {
   Modal.open({
-    content: '感谢您的反馈，如果建议被成功采纳，我们会第一时间通知您',
+    title: 'Ares Moblie',
+    content: '基于 Vue3 和 Vant4 的H5多页面模板，让开发变得更简单。',
   })
 }
 </script>
-
-<style lang="scss">
-.btn {
-  @apply px-4 py-2 flex items-center rounded-1 border-none text-sm text-white bg-primary hover:(bg-primary/70) active:(bg-primary/90)
-}
-</style>

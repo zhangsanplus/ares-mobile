@@ -5,7 +5,7 @@
         {{ title }}
       </h3>
       <div class="x-modal-body">
-        <p>{{ content }}</p>
+        <span>{{ content }}</span>
       </div>
       <div class="x-modal-footer">
         <button class="x-modal-btn" @click="handleOk">
@@ -61,7 +61,7 @@ function handleClose() {
   position: relative;
   width: 320px;
   margin-top: -10vh;
-  padding: 20px 0;
+  padding: 26px 0;
   text-align: center;
   background-color: #fff;
   border-radius: 12px;
@@ -80,7 +80,8 @@ function handleClose() {
   }
 
   &-header {
-    padding: 0 30px;
+    margin: 0;
+    padding: 5px 20px;
     color: #333;
     font-weight: bold;
     font-size: 18px;

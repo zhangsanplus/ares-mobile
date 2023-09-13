@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { h, render } from 'vue'
 import XModal from './x-modal.vue'
 import type { App } from 'vue'
@@ -22,9 +21,10 @@ const Modal = {
   },
   open(config: XModalProps) {
     let container: HTMLElement | null = document.createElement('div')
+    let vm: VNode | null = null
 
     const handleOk = () => {
-      if (vm.component) {
+      if (vm?.component) {
         vm.component.props.visible = false
       }
 
@@ -50,7 +50,7 @@ const Modal = {
       onClose: handleClose,
     }
 
-    const vm = h(XModal, {
+    vm = h(XModal, {
       ...config,
       ...defaultConfig,
     })

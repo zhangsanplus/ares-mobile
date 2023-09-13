@@ -41,4 +41,7 @@ export default defineConfig({
       danger: '#f53f3f',
     },
   },
+  shortcuts: {
+    btn: 'px-4 py-2 flex items-center rounded-1 border-none text-white bg-primary hover:(bg-primary/70) active:(bg-primary/90)',
+  },
 })
