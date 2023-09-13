@@ -1,1 +1,0 @@
-System.register(["./index-legacy-d0ec2a5f.js","./vue-legacy-dc477d9a.js"],(function(e,t){"use strict";var n;return{setters:[function(e){n=e._},null],execute:function(){e("default",n({},[["render",function(e,t){return" 404 "}]]))}}}));
