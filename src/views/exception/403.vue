@@ -1,5 +1,5 @@
 <template>
-  <van-empty class="exception" image="error" description="抱歉，您访问的页面不存在。">
+  <van-empty class="exception" image="error" description="抱歉，你无权访问这个页面。">
     <van-button type="primary" @click="goHome">
       返回首页
     </van-button>

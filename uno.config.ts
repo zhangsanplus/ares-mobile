@@ -2,7 +2,6 @@ import presetRemToPx from '@unocss/preset-rem-to-px'
 import {
   defineConfig,
   presetAttributify,
-  presetIcons,
   presetUno,
   transformerDirectives,
   transformerVariantGroup,
@@ -20,8 +19,6 @@ export default defineConfig({
     presetUno(),
     // 启用属性化模式的其他规则
     presetAttributify(),
-    // 纯 CSS 图标解决方案
-    presetIcons({}),
     // 将 rem 转换为 px
     presetRemToPx({
       // baseFontSize: 4, // 1rem = 4px

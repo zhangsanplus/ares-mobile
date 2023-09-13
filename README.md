@@ -17,7 +17,7 @@
 - [单页面（SPA）模板](https://github.com/zhangsanplus/ares-mobile)
 - [多页面（MPA）模板](https://github.com/zhangsanplus/ares-mobile/tree/mpa)
 
-如果你需要搭建中后台管理系统，推荐你使用 [Ares Admin](https://github.com/zhangsanplus/ares-admin)
+如果你需要中后台管理系统模板，推荐你使用 [Ares Admin](https://github.com/zhangsanplus/ares-admin)
 
 ## 🌈 安装和使用
 
@@ -55,7 +55,7 @@ npm run up
 
 - [x] 移动端组件库：`vant`
 - [x] 原子化CSS：`unocss`
-- [x] 应用程序级JS的语言：`TypeScript`
+- [x] 应用程序级的JS语言：`typeScript`
 - [x] 移动端适配：`postcss-px-to-viewport`
 - [x] 开发环境区分：`development + test + production`
 - [x] 移动端调试配置：`eruda`

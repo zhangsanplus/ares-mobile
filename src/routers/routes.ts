@@ -11,8 +11,13 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('@/views/demo/index.vue'),
   },
   {
+    path: '/403',
+    name: 'forbidden',
+    component: () => import('@/views/exception/403.vue'),
+  },
+  {
     path: '/404',
-    name: 'notFound',
+    name: 'notfound',
     component: () => import('@/views/exception/404.vue'),
   },
   {

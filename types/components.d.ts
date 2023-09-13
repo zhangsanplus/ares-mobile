@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ICarbonWorshipMuslim: typeof import('~icons/carbon/worship-muslim')['default']
+    ICustomGithub: typeof import('~icons/custom/github')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     VanCell: typeof import('vant/es')['Cell']

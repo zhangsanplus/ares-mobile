@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "private": true,
   "packageManager": "pnpm@8.6.12",
-  "description": "An H5 template based on Vue3 and Vant4 (spa and mpa)",
+  "description": "A mobile (spa and mpa) template based on Vue3 and Vant4.",
   "author": "zhangsanplus",
   "license": "MIT",
   "homepage": "https://github.com/zhangsanplus/ares-mobile",
@@ -41,8 +41,8 @@
     "axios": "1.4.0",
     "dayjs": "^1.11.9",
     "mitt": "^3.0.1",
+    "pinia": "^2.1.6",
     "vant": "4.6.4",
-    "vite-plugin-eruda": "^1.0.1",
     "vue": "3.3.4",
     "vue-router": "^4.2.4"
   },
@@ -79,8 +79,8 @@
     "unplugin-vue-components": "0.25.1",
     "vite": "4.4.9",
     "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-eruda": "^1.0.1",
     "vite-plugin-progress": "0.0.7",
-    "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
     "vue-tsc": "1.8.8"
   },
