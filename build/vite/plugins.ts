@@ -9,17 +9,17 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import eruda from 'vite-plugin-eruda'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 import type { PluginOption } from 'vite'
 
 export function pathResolve(dir: string) {
-  return path.resolve(process.cwd(), '.', dir)
+  return path.resolve(process.cwd(), dir)
 }
 
 export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
@@ -39,22 +39,26 @@ export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
       dirs: [pathResolve('src/components')],
       resolvers: [
         // 自动导入 vant 组件
-        VantResolver({
-          importStyle: false,
-        }),
+        VantResolver({ importStyle: false }),
         // 自动注册图标组件
         IconsResolver({
-          enabledCollections: ['mdi'],
+          customCollections: ['custom'],
         }),
       ],
       dts: pathResolve('types/components.d.ts'),
     }),
-    Icons(),
-    createSvgIconsPlugin({
-      // 指定需要缓存的图标文件夹
-      iconDirs: [path.resolve(process.cwd(), 'src/icons')],
-      symbolId: 'icon-[dir]-[name]',
-      svgoOptions: isBuild,
+    // https://github.com/unplugin/unplugin-icons
+    Icons({
+      compiler: 'vue3',
+      autoInstall: true,
+      defaultStyle: 'vertical-align: -0.15em;fill: currentcolor;',
+      customCollections: {
+        custom: FileSystemIconLoader('src/icons'),
+      },
+      iconCustomizer(collection, icon, props) {
+        props.width = '1em'
+        props.height = '1em'
+      },
     }),
     vueSetupExtend(),
   ]

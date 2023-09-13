@@ -17,7 +17,9 @@
       <p>2. 移动端组件库 - <strong>Vant</strong></p>
       <p>3. 原子化 CSS - <strong>UnoCSS</strong></p>
       <p>4. 应用程序级 JavaScript 的语言 - <strong>TypeScript</strong></p>
-      <p>5. 默认配置<strong>自动导入</strong>、<strong>字体图标</strong>等常用插件</p>
+      <p>
+        5. 实用的字体图标库 <i-carbon-worship-muslim text-primary />、自定义字体图标 <i-custom-github />
+      </p>
       <p>6. 移动端调试插件 - <strong>eruda</strong></p>
       <p>7. 移动端适配插件 - <strong>postcss-px-to-viewport</strong></p>
       <p>8. 前端规范配置 - <strong>eslint</strong>、<strong>stylelint</strong>、<strong>commitlint</strong></p>
@@ -47,7 +49,6 @@
           href="./index.html"
           target="_self"
         >
-          <span i-carbon-home mr-1 />
           返回首页
         </a>
       </div>

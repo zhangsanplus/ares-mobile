@@ -5,6 +5,12 @@ interface ImportMetaEnv {
   /** 开发服务端口号 */
   VITE_DEV_PORT: number
 
+  /** 开发代理路径 */
+  VITE_DEV_PROXY_PATH?: string
+
+  /** 开发代理地址 */
+  VITE_DEV_PROXY_TARGET?: string
+
   /** 调试工具 */
   VITE_DEV_TOOLS: 'true' | 'false'
 

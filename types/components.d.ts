@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ICarbonWorshipMuslim: typeof import('~icons/carbon/worship-muslim')['default']
+    ICustomGithub: typeof import('~icons/custom/github')['default']
     VanButton: typeof import('vant/es')['Button']
     VanCell: typeof import('vant/es')['Cell']
     VanList: typeof import('vant/es')['List']
