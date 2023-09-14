@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>目录</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      padding: 2vh;
+      background: #f3f3f3;
+    }
+
+    table,
+    tr,
+    th,
+    td {
+      border: 1px solid #ebeef5;
+    }
+
+    table {
+      width: 100%;
+      background-color: #fff;
+      border-collapse: collapse;
+      border-spacing: 0;
+
+    }
+
+    td,
+    th {
+      padding: 10px 8px;
+    }
+
+    tr {
+      transition: background 0.25s;
+    }
+
+    tr:hover {
+      background: #f5f6f6;
+    }
+
+    td:nth-child(1) {
+      text-align: center;
+    }
+
+    td {
+      cursor: pointer;
+      user-select: text;
+    }
+
+    a {
+      display: block;
+      color: #165dff;
+      text-decoration: none;
+    }
+
+    strong {
+      font-weight: normal;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      min-height: 80vh;
+      margin: 0 auto;
+      color: #444;
+      padding: 12px;
+      font-size: 14px;
+      background-color: #fff;
+      border-radius: 4px;
+    }
+
+    .msg-box {
+      margin-top: 20px;
+      color: #aaa;
+      font-size: 13px;
+      line-height: 20px;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+
+  <%- VITE_INJECT_DATA %>
+</head>
+
+<body>
+  <div class="container">
+    <table>
+      <tr>
+        <th>序号</th>
+        <th>页面</th>
+        <th>标题</th>
+      </tr>
+    </table>
+
+    <div class="msg-box">
+      <p>启动时默认打开页面，可在 <strong>vite.config.ts</strong> 中关闭</p>
+    </div>
+  </div>
+
+  <script>
+    function gengerateUrl(name) {
+      const pathname = location.pathname.substring(0, location.pathname.lastIndexOf('/'))
+      const url = `${location.origin}${pathname}/${name}.html`
+      return url
+    }
+
+    function handleCopy(url, title) {
+      if (title) {
+        copyToClipboard(`${title} ${url}`)
+      } else {
+        copyToClipboard(url)
+      }
+    }
+
+    function copyToClipboard(text) {
+      const textarea = document.createElement('textarea')
+      document.body.appendChild(textarea)
+      textarea.style.position = 'fixed'
+      textarea.style.top = '10px'
+      textarea.value = text
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      showToast(`已复制：${text}`)
+    }
+
+    function showToast(message) {
+      const toast = document.createElement('div')
+      toast.textContent = message
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        z-index: 9999;
+        padding: 8px 10px;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transform: translateX(-50%);
+      `
+      document.body.appendChild(toast)
+      setTimeout(() => {
+        document.body.removeChild(toast)
+      }, 1000)
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const table = document.querySelector('table')
+      // eslint-disable-next-line no-undef
+      pages.forEach((page, index) => {
+        const pageUrl = gengerateUrl(page.path)
+        const tr = document.createElement('tr')
+        const td1 = document.createElement('td')
+        const td2 = document.createElement('td')
+        const td3 = document.createElement('td')
+        const p1 = document.createElement('p')
+        const p2 = document.createElement('p')
+        const a = document.createElement('a')
+        a.target = '_black'
+
+        td1.appendChild(p1)
+        td2.appendChild(p2)
+        td3.appendChild(a)
+
+        tr.appendChild(td1)
+        tr.appendChild(td2)
+        tr.appendChild(td3)
+
+        p1.textContent = index + 1
+        p1.title = '点击复制链接'
+        p1.addEventListener('click', () => {
+          handleCopy(pageUrl)
+        })
+
+        p2.textContent = page.path
+        p2.title = '点击复制链接'
+        p2.addEventListener('click', () => {
+          handleCopy(pageUrl, page.title)
+        })
+
+        a.href = pageUrl
+        a.title = `${pageUrl}`
+        a.textContent = page.title
+
+        table.appendChild(tr)
+      })
+    })
+  </script>
+</body>
+
+</html>

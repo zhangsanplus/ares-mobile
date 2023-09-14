@@ -6,6 +6,7 @@ specifiers:
   '@commitlint/config-conventional': ^17.7.0
   '@iconify-json/carbon': ^1.1.19
   '@ls-lint/ls-lint': 2.0.1
+  '@types/fs-extra': ^11.0.2
   '@types/node': 20.4.9
   '@unocss/preset-rem-to-px': ^0.55.0
   '@vitejs/plugin-legacy': 4.1.1
@@ -61,6 +62,7 @@ devDependencies:
   '@commitlint/config-conventional': 17.7.0
   '@iconify-json/carbon': 1.1.21
   '@ls-lint/ls-lint': 2.0.1
+  '@types/fs-extra': 11.0.2
   '@types/node': 20.4.9
   '@unocss/preset-rem-to-px': 0.55.7
   '@vitejs/plugin-legacy': 4.1.1_terser@5.19.2+vite@4.4.9
@@ -2181,6 +2183,13 @@ packages:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
     dev: true
 
+  /@types/fs-extra/11.0.2:
+    resolution: {integrity: sha512-c0hrgAOVYr21EX8J0jBMXGLMgJqVf/v6yxi0dLaJboW9aQPh16Id+z6w2Tx1hm+piJOLv8xPfVKZCLfjPw/IMQ==}
+    dependencies:
+      '@types/jsonfile': 6.1.2
+      '@types/node': 20.4.9
+    dev: true
+
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
@@ -2190,6 +2199,12 @@ packages:
 
   /@types/json-schema/7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
+    dev: true
+
+  /@types/jsonfile/6.1.2:
+    resolution: {integrity: sha512-8t92P+oeW4d/CRQfJaSqEwXujrhH4OEeHRjGU3v1Q8mUS8GPF3yiX26sw4svv6faL2HfBtGTe2xWIoVgN3dy9w==}
+    dependencies:
+      '@types/node': 20.4.9
     dev: true
 
   /@types/mdast/3.0.12:

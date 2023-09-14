@@ -53,7 +53,7 @@ npm run new
 
 # 输入页面名称(页面名 + 空格 + 中文标题)
 # 例如：home 首页
-# 或直接在项目 `src/pages` 目录下新建 html
+# 或直接在 `src/pages` 或 `public` 目录下新建 html
 ```
 
 - 升级依赖
@@ -66,7 +66,7 @@ npm run up
 
 - [x] 移动端组件库：`vant`
 - [x] 原子化CSS：`unocss`
-- [x] 应用程序级JS的语言：`typeScript`
+- [x] 应用程序级的JS语言：`typeScript`
 - [x] 移动端适配：`postcss-px-to-viewport`
 - [x] 开发环境区分：`development + test + production`
 - [x] 移动端调试工具：`eruda`

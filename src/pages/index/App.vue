@@ -7,8 +7,8 @@
       <van-button type="primary" url="https://github.com/zhangsanplus/ares-mobile/tree/mpa">
         github
       </van-button>
-      <van-button type="primary" url="./__nav__.html">
-        页面导航
+      <van-button type="primary" url="./__toc__.html">
+        页面目录
       </van-button>
     </div>
 

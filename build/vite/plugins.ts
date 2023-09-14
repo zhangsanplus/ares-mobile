@@ -16,6 +16,7 @@ import { VantResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import eruda from 'vite-plugin-eruda'
 import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+import tocHtml from '../vite-plugin-toc-html'
 import type { PluginOption } from 'vite'
 
 export function pathResolve(dir: string) {
@@ -23,8 +24,8 @@ export function pathResolve(dir: string) {
 }
 
 export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
-  const { VITE_APP_ENV, VITE_DEV_TOOLS } = viteEnv
-  const isProd = VITE_APP_ENV === 'production'
+  const isProd = viteEnv.VITE_APP_ENV === 'production'
+  const isDev = !isProd
 
   const vitePlugins: PluginOption[] = [
     vue(),
@@ -32,7 +33,7 @@ export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
     UnoCSS(),
     AutoImport({
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-      imports: ['vue', 'vue/macros', '@vueuse/core'],
+      imports: ['vue', '@vueuse/core'],
       dts: pathResolve('types/auto-imports.d.ts'),
     }),
     Components({
@@ -61,13 +62,16 @@ export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
       },
     }),
     vueSetupExtend(),
+    tocHtml({
+      enabled: isDev,
+    }),
   ]
 
-  if (VITE_DEV_TOOLS === 'true') {
+  if (viteEnv.VITE_DEV_TOOLS === 'true') {
     vitePlugins.push(eruda())
   }
 
-  if (isBuild && isProd) {
+  if (isProd) {
     // 旧版浏览器支持
     vitePlugins.push(vueLegacy())
   }

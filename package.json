@@ -23,7 +23,7 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "dev": "npm run sync && vite --host",
+    "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "build:test": "vue-tsc --noEmit && vite build --mode test",
     "preinstall": "npx only-allow pnpm",
@@ -35,8 +35,7 @@
     "typecheck": "vue-tsc --noEmit",
     "up": "taze major -I",
     "release": "bumpp",
-    "new": "node ./scripts/generate.js",
-    "sync": "node ./scripts/sync.js"
+    "new": "node ./scripts/generate.js"
   },
   "dependencies": {
     "@vueuse/core": "10.3.0",
@@ -52,6 +51,7 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@iconify-json/carbon": "^1.1.19",
     "@ls-lint/ls-lint": "2.0.1",
+    "@types/fs-extra": "^11.0.2",
     "@types/node": "20.4.9",
     "@unocss/preset-rem-to-px": "^0.55.0",
     "@vitejs/plugin-legacy": "4.1.1",

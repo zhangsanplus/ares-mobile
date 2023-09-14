@@ -56,11 +56,11 @@
 
     <section class="bg-white p-2 m-4 rounded-1">
       <van-tabs v-model:active="active">
-        <van-tab title="无限加载">
-          <scroll-list />
-        </van-tab>
         <van-tab title="幸运抽奖">
           <luck-draw />
+        </van-tab>
+        <van-tab title="无限加载">
+          <scroll-list />
         </van-tab>
       </van-tabs>
     </section>

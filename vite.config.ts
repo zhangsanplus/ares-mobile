@@ -28,7 +28,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       port: env.VITE_DEV_PORT,
       https: false,
       proxy: createProxy(env),
-      // open: '/__nav__.html',
+      open: '/__toc__.html',
     },
     plugins: createVitePlugins(env, isBuild),
     esbuild: {

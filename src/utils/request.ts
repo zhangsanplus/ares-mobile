@@ -39,16 +39,18 @@ class RequestHttp {
      * 响应拦截器
      */
     this.service.interceptors.response.use(
+      // 2xx 时触发
       (response) => {
         const res = response.data
         // 响应数据为二进制流
         if (res instanceof ArrayBuffer) return res
         // 响应错误
         if (res.code !== ResponseEnum.SUCCESS) {
-          return Promise.reject(new Error(res.msg || 'Request Error'))
+          return Promise.reject(res.msg || 'Request Error')
         }
         return res
       },
+      // 非 2xx 时触发
       (error) => {
         if (axios.isCancel(error)) {
           console.error(error.message)

@@ -1,8 +1,12 @@
 const path = require('node:path')
 const process = require('node:process')
+const fs = require('fs-extra')
 const colors = require('kolorist')
-const { renderVueFile, renderMainFile, renderHtmlFile } = require('./template')
-const fs = require('./utils/fs')
+const {
+  renderVueFile,
+  renderMainFile,
+  renderHtmlFile,
+} = require('./template')
 
 console.log(
   colors.blue('请输入新页面信息: '),
@@ -56,8 +60,6 @@ process.stdin.on('data', async (chunk) => {
       colors.blue(entryFile),
     )
     await fs.outputFile(entryFile, renderMainFile(pagePath))
-
-    await addPageInfo(pagePath, pageName)
     console.log()
     console.log(colors.green('✨创建完成！'))
   } catch (e) {
@@ -76,16 +78,4 @@ process.stdin.on('end', () => {
  */
 function convertKebabCase(str) {
   return str.replace(/[A-Z]/g, i => `-${i.toLowerCase()}`)
-}
-
-/**
- * 添加新的页面信息
- */
-async function addPageInfo(pagePath, pageName) {
-  const data = fs.readPagesJsonSync()
-  data.push({
-    path: pagePath,
-    title: pageName,
-  })
-  return fs.writePagesJsonSync(data)
 }
