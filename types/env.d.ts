@@ -11,7 +11,7 @@ interface ImportMetaEnv {
   /** 开发代理地址 */
   VITE_DEV_PROXY_TARGET?: string
 
-  /** 调试工具 */
+  /** 调试工具 eruda */
   VITE_DEV_TOOLS: 'true' | 'false'
 
   /** 打包生成的文件目录 */
