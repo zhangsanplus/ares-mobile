@@ -66,6 +66,8 @@
 </template>
 
 <script lang="ts" setup>
+import { showToast } from 'vant'
+
 // https://github.com/vincentzyc/vue3-demo/blob/main/src/views/LuckDraw.vue
 
 interface AwardTypes {
@@ -87,60 +89,23 @@ let award: AwardTypes // 抽中的奖品
 const animate = ref(false) // 中奖名单滚动动画控制
 const current = ref(0) // 当前转动的位置
 const list = reactive([
-  {
-    phone: '186****2336抽中0元话费',
-  },
-  {
-    phone: '166****2336抽中1元话费',
-  },
-  {
-    phone: '156****2336抽中2元话费',
-  },
+  { phone: '186****2336抽中0元话费' },
+  { phone: '166****2336抽中1元话费' },
+  { phone: '156****2336抽中2元话费' },
 ])
 const awards = reactive([
-  {
-    id: 1,
-    runId: 0,
-    name: '潘多拉音箱',
-  },
-  {
-    id: 2,
-    runId: 1,
-    name: '小酷M1耳机',
-  },
-  {
-    id: 3,
-    runId: 2,
-    name: '酷狗VIP会员',
-  },
-  {
-    id: 4,
-    runId: 7,
-    name: '8元话费',
-  },
-  {
-    id: 5,
-    runId: 3,
-    name: '12元话费',
-  },
-  {
-    id: 6,
-    runId: 6,
-    name: '谢谢参与1',
-  },
-  {
-    id: 7,
-    runId: 5,
-    name: '4元话费',
-  },
-  {
-    id: 8,
-    runId: 4,
-    name: '谢谢参与2',
-  },
+  { id: 1, runId: 0, name: '潘多拉音箱' },
+  { id: 2, runId: 1, name: '小酷M1耳机' },
+  { id: 3, runId: 2, name: '酷狗VIP会员' },
+  { id: 4, runId: 7, name: '8元话费' },
+  { id: 5, runId: 3, name: '12元话费' },
+  { id: 6, runId: 6, name: '谢谢参与1' },
+  { id: 7, runId: 5, name: '4元话费' },
+  { id: 8, runId: 4, name: '谢谢参与2' },
 ])
 
-const awardList = computed<typeof awards>(() => {
+// 添加"开始抽奖"按钮到奖品列表中
+const awardList = computed(() => {
   const newArr = JSON.parse(JSON.stringify(awards))
   newArr.splice(4, 0, { name: 'drawBtn' })
   return newArr
@@ -160,6 +125,7 @@ function move() {
   const timer = setTimeout(() => {
     current.value++
     if (current.value > 7) current.value = 0
+
     // 若抽中的奖品id存在，并且转动时间大于2.5秒后，则开始减速转动
     if (award?.id && (Date.now() - time) / 1000 > minRotateTime) {
       console.log('奖品出来了')
@@ -173,13 +139,9 @@ function move() {
         setTimeout(() => {
           isRuningLucky = false
           // 这里写停下来要执行的操作（弹出奖品框之类的）
-          const getAward: AwardTypes | undefined = awards.find(
-            v => v.id === award.id,
-          )
+          const getAward = awards.find(v => v.id === award.id)
           if (getAward) {
-            console.log(
-              `您抽中的奖品是${getAward.name},奖品id是${getAward.id}`,
-            )
+            showToast(`您抽中的奖品是${getAward.name},奖品id是${getAward.id}`)
           }
         }, 400)
         return
@@ -200,6 +162,7 @@ function drawAward() {
     if (getAward) award = getAward
     console.log('返回的抽奖结果是', award)
   }, 2000)
+
   move()
 }
 
