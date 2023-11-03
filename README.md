@@ -1,13 +1,11 @@
 
 <div align="center">
 
-<img src="https://github.com/zhangsanplus/ares-admin/blob/main/screenshot/logo.png?raw=true" height="200" />
+<img src="https://github.com/zhangsanplus/ares-admin/blob/main/screenshot/logo.png?raw=true" height="120" />
 
-<h1>Ares Mobile</h1>
+[![License](https://img.shields.io/npm/l/package.json.svg?style=flat)](https://github.com/zhangsanplus/ares-mobile/blob/main/LICENSE) [![release](https://img.shields.io/github/release/zhangsanplus/ares-mobile.svg)](https://github.com/zhangsanplus/ares-mobile/releases)
 
-[![License](https://img.shields.io/npm/l/package.json.svg?style=flat)](https://github.com/zhangsanplus/ares-mobile/blob/main/LICENSE)
-
-基于 Vant4 和 Vue3 的 H5 前端**多页面**模板
+[Ares Mobile](https://github.com/zhangsanplus/ares-mobile/tree/mpa) - 基于 Vant4 和 Vue3 的 H5 前端**多页面**模板
 </div>
 
 ## 🔥 介绍
@@ -17,7 +15,7 @@
 - [单页面（SPA）模板](https://github.com/zhangsanplus/ares-mobile)
 - [多页面（MPA）模板](https://github.com/zhangsanplus/ares-mobile/tree/mpa)
 
-如果你需要中后台管理系统模板，推荐你使用 [Ares Admin](https://github.com/zhangsanplus/ares-admin)
+如果你需要中后台管理系统模板，推荐你使用 [Ares Admin](https://github.com/zhangsanplus/ares-admin) 模板
 
 ## 🌈 安装和使用
 
