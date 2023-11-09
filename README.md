@@ -15,7 +15,7 @@
 - [单页面（SPA）模板](https://github.com/zhangsanplus/ares-mobile)
 - [多页面（MPA）模板](https://github.com/zhangsanplus/ares-mobile/tree/mpa)
 
-如果你需要中后台管理系统模板，推荐你使用 [Ares Admin](https://github.com/zhangsanplus/ares-admin) 模板
+如果你需要中后台管理系统模板，推荐你使用 [Ares Admin](https://github.com/zhangsanplus/ares-admin) 模板。
 
 ## 🌈 安装和使用
 

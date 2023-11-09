@@ -16,7 +16,7 @@ import type { PluginOption } from 'vite'
  * @name createVitePlugins
  * @description 封装plugins数组统一调用
  */
-export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
+export function createVitePlugins(viteEnv: ImportMetaEnv, _isBuild: boolean) {
   const isProd = viteEnv.VITE_APP_ENV === 'production'
 
   const vitePlugins: PluginOption[] = [

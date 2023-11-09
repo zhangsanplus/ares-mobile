@@ -1,17 +1,16 @@
 {
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "scss.lint.unknownAtRules": "ignore",
   "prettier.enable": false,
   "npm.packageManager": "pnpm",
   "local-history.enabled": 0,
+  "scss.lint.unknownAtRules": "ignore",
+  "css.lint.unknownAtRules": "ignore",
   "files.associations": {
     "*.css": "tailwindcss"
   },
   "eslint.validate": [
     "javascript",
-    "javascriptreact",
     "typescript",
-    "typescriptreact",
     "vue",
     "html",
     "markdown",
@@ -19,26 +18,60 @@
     "jsonc",
     "yaml"
   ],
-  "editor.quickSuggestions": {
-    "strings": true
-  },
+  "eslint.rules.customizations": [
+    {
+      "severity": "off",
+      "rule": "style/*"
+    },
+    {
+      "severity": "off",
+      "rule": "*-indent"
+    },
+    {
+      "severity": "off",
+      "rule": "*-spacing"
+    },
+    {
+      "severity": "off",
+      "rule": "*-spaces"
+    },
+    {
+      "severity": "off",
+      "rule": "*-order"
+    },
+    {
+      "severity": "off",
+      "rule": "*-dangle"
+    },
+    {
+      "severity": "off",
+      "rule": "*-newline"
+    },
+    {
+      "severity": "off",
+      "rule": "*quotes"
+    },
+    {
+      "severity": "off",
+      "rule": "*semi"
+    }
+  ],
+  "eslint.experimental.useFlatConfig": true,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": false,
+    "source.organizeImports": "never",
     "source.fixAll.stylelint": true,
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
-  "css.lint.unknownAtRules": "ignore",
   "cSpell.words": [
-    "Attributify",
     "bumpp",
     "Customizer",
     "eruda",
     "iconify",
+    "sider",
     "taze",
     "unocss",
-    "vant",
-    "Windi",
+    "Vant",
     "zhangsanplus"
   ]
 }

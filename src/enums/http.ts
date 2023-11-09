@@ -12,7 +12,7 @@ export enum ResponseEnum {
    */
   ERROR = 9999,
 
-  // 可自行添加其他类型
+  // 根据实际情况扩展，如：
   // FORBIDDEN = 403,
   // NOT_FOUND = 404,
   // SERVER_ERROR = 500,

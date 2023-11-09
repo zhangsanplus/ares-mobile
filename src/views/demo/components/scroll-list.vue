@@ -34,6 +34,7 @@ async function getList() {
     finished.value = list.value.length >= data.count
   } catch (error) {
     console.error(error)
+    finished.value = false
   }
   loading.value = false
 }
