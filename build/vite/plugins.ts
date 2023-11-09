@@ -23,7 +23,7 @@ export function pathResolve(dir: string) {
   return path.resolve(process.cwd(), dir)
 }
 
-export function createVitePlugins(viteEnv: ImportMetaEnv, isBuild: boolean) {
+export function createVitePlugins(viteEnv: ImportMetaEnv, _isBuild: boolean) {
   const isProd = viteEnv.VITE_APP_ENV === 'production'
   const isDev = !isProd
 

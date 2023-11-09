@@ -10,7 +10,7 @@ interface PageInfo {
 /**
  * 获取页面路由目录
  * 读取 pages 和 public 文件夹下面的 html 文件
-*/
+ */
 export function getPages() {
   const pagesHtmlFiles = getHtmlFilesList('./src/pages')
   const staticHtmlFiles = getHtmlFilesList('./public')
@@ -48,7 +48,6 @@ function writePagesJson(data: PageInfo[]) {
 /**
  * 读取文件夹下面所有 html 文件
  * @param {*} folderPath
- * @returns
  */
 function getHtmlFilesList(folderPath: string): PageInfo[] {
   const fullPath = path.resolve(process.cwd(), folderPath)

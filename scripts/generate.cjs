@@ -6,7 +6,7 @@ const {
   renderVueFile,
   renderMainFile,
   renderHtmlFile,
-} = require('./template')
+} = require('./template.cjs')
 
 console.log(
   colors.blue('请输入新页面信息: '),

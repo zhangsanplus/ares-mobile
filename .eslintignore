@@ -4,7 +4,8 @@ dist-*
 
 *.sh
 
-.history
 .vscode
 .husky
+
+.history
 .github

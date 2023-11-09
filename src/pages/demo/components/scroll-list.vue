@@ -33,6 +33,7 @@ async function getList() {
     list.value = form.pageNum === 1 ? data.list : [...list.value, ...data.list]
     finished.value = list.value.length >= data.count
   } catch (error) {
+    finished.value = true
     console.error(error)
   }
   loading.value = false

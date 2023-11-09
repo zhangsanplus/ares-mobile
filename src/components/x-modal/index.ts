@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
+/* eslint-disable ts/no-use-before-define */
 import { h, render } from 'vue'
 import XModal from './x-modal.vue'
 import type { App } from 'vue'
